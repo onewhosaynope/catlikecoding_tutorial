@@ -15,13 +15,44 @@ public class Clock : MonoBehaviour
     const float degreesPerMinute = 6f;
     const  float degreesPerSecond = 6f;
     
-    // Start is called before the first frame update
-    private void Update()
+    
+    /*private void Update()
     {
         DateTime time = DateTime.Now;
         Debug.Log("current time: " + time.TimeOfDay);
         hoursTransform.localRotation = Quaternion.Euler(0f, time.Hour * degreesPerHour, 0f); 
         minutesTransform.localRotation = Quaternion.Euler(0f, time.Minute * degreesPerMinute, 0f);
         secondsTransform.localRotation = Quaternion.Euler(0f, time.Second * degreesPerSecond, 0f);
+    }*/
+
+    void UpdateContinuous()
+    {
+        TimeSpan time = DateTime.Now.TimeOfDay;
+        hoursTransform.localRotation =
+            Quaternion.Euler(0f, (float)time.TotalHours * degreesPerHour, 0f);
+        minutesTransform.localRotation =
+            Quaternion.Euler(0f, (float)time.TotalMinutes * degreesPerMinute, 0f);
+        secondsTransform.localRotation =
+            Quaternion.Euler(0f, (float)time.TotalSeconds * degreesPerSecond, 0f);
+    }
+
+    void UpdateDiscrete()
+    {
+        DateTime time = DateTime.Now;
+        hoursTransform.localRotation = Quaternion.Euler(0f, time.Hour * degreesPerHour, 0f);
+        minutesTransform.localRotation = Quaternion.Euler(0f, time.Minute * degreesPerMinute, 0f);
+        secondsTransform.localRotation = Quaternion.Euler(0f, time.Second * degreesPerSecond, 0f);
+    }
+
+    private void Update()
+    {
+        if (continuous)
+        {
+            UpdateContinuous();
+        }
+        else
+        {
+            UpdateDiscrete();
+        }
     }
 }
