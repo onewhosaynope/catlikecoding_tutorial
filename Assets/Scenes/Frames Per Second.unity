@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: 4}
+  m_AnchoredPosition: {x: -4, y: 26}
   m_SizeDelta: {x: 16, y: 16}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &299781053
@@ -280,7 +280,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: 4}
+  m_AnchoredPosition: {x: -4, y: -18.2}
   m_SizeDelta: {x: 16, y: 16}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &716039943
@@ -715,11 +715,15 @@ MonoBehaviour:
   averageFPSLabel: {fileID: 1013345870}
   lowestFPSLabel: {fileID: 716039943}
   coloring:
-  - color: {r: 1, g: 0, b: 0, a: 0}
+  - color: {r: 0, g: 0.952054, b: 1, a: 1}
     minimumFPS: 60
-  - color: {r: 0, g: 0.990566, b: 0.22303241, a: 0}
+  - color: {r: 0, g: 0.990566, b: 0.22303241, a: 1}
     minimumFPS: 45
-  - color: {r: 1, g: 0.9398438, b: 0, a: 0}
+  - color: {r: 1, g: 0.9398438, b: 0, a: 1}
+    minimumFPS: 30
+  - color: {r: 1, g: 0.44503543, b: 0, a: 1}
+    minimumFPS: 30
+  - color: {r: 1, g: 0.11694199, b: 0, a: 1}
     minimumFPS: 30
 --- !u!114 &1636665143
 MonoBehaviour:
