@@ -159,7 +159,7 @@ MonoBehaviour:
   childScale: 0.5
   spawnProbability: 0.7
   maxRotationSpeed: 60
-  maxTwist: 0
+  maxTwist: 15
 --- !u!4 &572591521
 Transform:
   m_ObjectHideFlags: 0
