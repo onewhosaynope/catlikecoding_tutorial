@@ -89,8 +89,7 @@ public class Fractal : MonoBehaviour
         for (int i = 0; i < childDirections.Length; i++) {
             if (UnityEngine.Random.value < spawnProbability) {
                 yield return new WaitForSeconds(UnityEngine.Random.Range(0.1f, 0.5f));
-                new GameObject("Fractal Child").AddComponent<Fractal>().
-                    Initialize(this, i);
+                new GameObject("Fractal Child").AddComponent<Fractal>().Initialize(this, i);
             }
         }
     }
