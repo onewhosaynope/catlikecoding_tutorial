@@ -23,7 +23,16 @@ public class RoundedCube : MonoBehaviour {
     }
     
     private void SetVertex (int i, int x, int y, int z) {
-        vertices[i] = new Vector3(x, y, z);
+        Vector3 inner = vertices[i] = new Vector3(x, y, z);
+
+        if (x < roundness) {
+            inner.x = roundness;
+        } else if (x > xSize - roundness) {
+            inner.x = xSize - roundness;
+        }
+        
+        normals[i] = (vertices[i] - inner).normalized;
+        vertices[i] = inner + normals[i] * roundness;
     }
 
     private void CreateVertices() {
